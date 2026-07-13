@@ -70,3 +70,124 @@ Software for automated multiverse analysis for fMRI
        - a. Saves a LOT of space, but if the analysis fails, it cannot be rerun from where it failed, and will restart from the beginning (i.e. progress is lost)
        - b. I think above may not be true, as only deletes intermediate files when they are no longer needed, so should be able to rerun/restart from checkpoint with debug on
        - c. As a consequence, give a buffer when requesting run time, as computation time will be wasted if program fails prior to exiting
+
+# Steps to Run a Test Job on the Nibi HPC Cluster
+
+Process Updated: 2026-07-09
+
+## Setting Up the AnalysisMultiverse Code for the First Time with Git
+
+At this time it is recommended to set up the code using Git since further changes are required.
+
+1. Log-in to the Nibi cluster, and confirm you are in your home directory.
+   > __New User Tip__:
+   >
+   > The command `pwd` should reveal "home/<your_user-name>", and the command prompt should be `[<your_user-name>@cluster-node ~]`.
+   > Get familiar with what the command line looks like when you are in your home directory, and get comfortable using the `pwd` ("present working directory") command to check where you are.
+
+3. Run `git config --global core.editor nano` to set Nano as your Git commit message editor.
+   > __New User Tip__:
+   >
+   > While the latest version of Git defaults to using Nano as its text editor, the Digital Research Alliance of Canada's (DRAC) clusters do not usually have the latest package versions installed. The current default on Nibi is VIM, which is not as beginner-friendly as Nano.
+
+4. Run `git config --global --edit` to update your name and email in Git on the cluster; this email should match your GitHub (GH) email if you want to sync with your own account or make pull requests to our repository.
+
+5. Run `git clone https://github.com/BrainHealthLabStFX/AnalysisMultiverse.git --branch main --single-branch` to clone the AnalysisMultiverse codebase from Brain Health Lab's repository to the cluster.
+   > __New User Tip__:
+   >
+   > In this command, we are specifying that we only want the `main` branch files downloaded. If you do not specify wanting only the `main` branch, you will get a lot of unnecessary files downloaded, such as the documentation website build.
+
+6. Run `cd AnalysisMultiverse` to move into the codebase directory once it has finished downloading.
+   > __New User Tip__:
+   >
+   > `cd` = Change Directory
+
+7. Now run `ls -a >> .gitignore` to add all the files and folders from the AnalysisMultiverse directory to your .gitignore.
+   Don't worry - we will be updating the .gitignore a few more times!
+   > __New User Tip__:
+   >
+   > The `-a` flag for the `ls` (list) command will show even hidden files and directories, like those that start with a period, like ".gitignore".
+   > The `>>` pipes the output of the `ls` command as an appendment to a file, and here we have specified the `.gitignore` file. 
+   > Appending to a file means that the output data is added onto the end of the file instead of overwriting the original data.
+
+8. Now run `git add .` and `git commit` to add this change to your local repo.
+   > __New User Tip__:
+   >
+   > The '.' here just stands for "all changes". Your commit message should reflect that you have updated the .gitignore file. Check out our [Contribution Guidelines for this project](docs/CONTRIBUTING.md) for recommendations on how to format your commit messages.
+
+9. Now run the following commands:
+    * `git rm -r hide`
+    * `git rm -r docs`
+    * `git rm -r .github`
+    * `git rm -r .spyproject`
+    * `git rm .DS_Store`
+    * `git rm MultiverseNotes_Gurpreet.docx`
+   
+   This removes all of the unnecessary directories and files from the cluster and the local repo that were downloaded with the `main` branch.
+
+   (Someday, we will cleanse the GitHub repo, but it is not this day.)
+   > __New User Tip__:
+   >
+   > `-r` is a flag used with the `rm` command to trigger recursive removal, so that all the files within the given directory are removed!
+
+11. Now run `git add -u` and `git commit` to add these changes to the local repo. Your commit message should be about removing unnecessary files for running the code on an HPC cluster.
+    > __New User Tip__:
+    >
+    > The `-u` flag here updates the Git working tree to remove the files.
+
+12. Change directories back to your home directory (`cd ~`) and move all the remaining AM files and subdirectories to your home directory. This can be done using the following commands:
+     * `git mv AnalysisMultiverse/.git .`
+     * `git mv AnalysisMultiverse/.gitignore .`
+     * `git mv AnalysisMultiverse/README.md .`
+     * `git mv AnalysisMultiverse/multiverse/ .`
+     * `git mv AnalysisMultiverse/multiverse.py .`
+
+13. Confirm the AnalysisMultiverse directory is empty (using `cd AnalysisMultiverse`, `ls -a`, then `cd ~`) before running `rmdir AnalysisMultiverse` in your home directory.
+    > __New User Tip__:
+    >
+    > To use `rmdir`, the directory must be completely empty!
+
+14. Now run `git add -u` and `git commit` to add these changes to the local repo, making an appropriate commit message.
+
+15. In your home directory, run `ls -a >> .gitignore` to add all the files and folders from your home directory to your .gitignore again.
+
+16. There are a lot of directories and files on the cluster - especially hidden ones - that you do not want to track with Git, so in this case, we've simplified the process by adding everything. Now we are going to remove the files we ***want*** to track from the .gitignore. 
+    Open the .gitignore file by running `nano -l .gitignore`.
+    Make sure all the file and directory names are each on their own, separate lines.
+    You'll likely want to add 'slurm*.out' to the file so that your SLURM output files are not tracked - this makes them less cumbersome to move around.
+    Now, find and ***delete*** the following lines from the file:
+     * multiverse/
+     * README.md
+     * multiverse.py
+    
+    Git will now ***not*** ignore these directories and files, and any changes you make to them ***will*** be tracked.
+    > __New User Tip__:
+    >
+    > Using `-l` when you open a file with Nano will display the line numbers for the file.
+
+> [!NOTE]
+> Remember how in step 6, we added some directories and files to the .gitignore before removing them from Git and the cluster?
+> This is so that if we want to update our code by pulling from GitHub, we won't re-download those unnecessary files!
+
+17. Now run `git add .` and `git commit` and write your commit message about updating the .gitignore to include the excess files from the GitHub repo, and extra files from the HPC cluster.
+
+18. Now make sure all the code is runnable by running `chmod -R 755 multiverse` to change the permissions on the `multiverse/` code directory, and run `chmod 755 multiverse.py` to change the permissions on the `multiverse.py` file.
+
+19. Run `git add .` and `git commit` and write your commit message about updating the permissions. This may take a while, because this change modifies every file in the codebase!
+
+20. It is advisable to create your data and output directories in your `scratch/` directory.
+    Use `mkdir` to create them there, and use `pwd` to copy down their exact paths to use with the final command to run the Analysis Multiverse program.
+    Make sure both directories are rrx using: `chmod -R 755 <directory name>`
+    Because these directories are added to your `scratch/` they will automatically not be tracked by Git!
+
+> [!WARNING]
+> Datasets must be in BIDS format, or the code will crash when it checks the validity of the dataset!
+
+22. To check how your configuration files are set, run `cd configuration` and in the `configuration/` directory, run: 
+     * `python -m pickle <file-name>.pkl`
+        * `general_configuration.pkl` -> configuration for SLURM (adjust your pipelines here)
+        * `multiverse_configuration.pkl` -> analysis parameter ranges
+
+23. Assuming no rerun, and assuming a valid configuration file, the `multiverse.py` file must be run from your home directory using the following command: 
+     * `python multiverse.py -r -d <path_to_dataset_directory_in_scratch/> -o <path_to_output_directory_in_scratch/>`
+    The initial run will create the `multiverse.sif` container file so is expected to take longer than usual.
