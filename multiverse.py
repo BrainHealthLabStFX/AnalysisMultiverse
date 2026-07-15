@@ -1,11 +1,25 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# To read through this code file, start at line 398
 """
-Created on Mon Nov  1 14:45:59 2021
+Multiverse Module
+A module to launch the AnalysisMultiverse software on a high performance 
+computing cluster, or on a local machine.
 
-@author: grahamseasons
+Example: 
+    >>> python multiverse.py -r -d home/your-data-folder -o home/your-output-folder
+
+Original Author: Graham Seasons
+Creation Date: 2021-11-01, 14:45:59
 """
+__author__ = "Graham Seasons"
+__copyright__ = "Copyright 2021, Brain Health Lab, St. Francis Xavier University"
+__credits__ = ["Erin Mazerolle", "Mahshid Soleymani", "Kate Redfern"]
+__license__ = "License"
+__version__ = "0.0"
+__maintainer__ = "Kate Redfern"
+__email__ = "x2023crd@stfx.ca"
+__status__ = "Development"
+
 # StdLib Imports:
 import argparse
 import json
@@ -18,13 +32,12 @@ import time
 # Specific Imports:
 from math import ceil
 from os.path import join as opj
-# OG Comment from GSeasons: from multiverse.gui.gui import MultiverseConfig #Mah#since we are not using GUI this needs to be commented out otherwise i get a error on a library that is not installed originally on my cluster
-# OG Comment from GSeasons: import numpy as np
+# from multiverse.gui.gui import MultiverseConfig
+# import numpy as np
 
 # Identify the directory path of this module file:
 dir = os.path.dirname(os.path.abspath(__file__))
 
-# TODO: Line 28 - parse function
 def parse(start):
     """
     This function converts arguments given on the command line using an
@@ -40,14 +53,12 @@ def parse(start):
     args = start.parse_args()
     # `run_now` default is set to False:
     run_now = False
-    # OG Comment from GSeasons: process_mode = 'MultiProc' #(this needs to be 
-    # changed to SLURM in cluster)
-    # `process_mode` default is set to 'SLURM':
-    process_mode = 'SLURM' #OG Comment from MSoleymani: Mah
+    # process_mode = 'MultiProc' 
+    process_mode = 'SLURM'
     # Check to see if `--config` flag OR `--run` flag has been given on 
     # the command line:
     if args.config or args.run:
-        # Run some checks!
+        # Run some checks:
         # If a data directory has not been provided AND `--config` has 
         # not been flagged:
         if args.data == None and not args.config:
@@ -98,6 +109,7 @@ def parse(start):
 
                     # Note: general_configuration.pkl is simply a 
                     # dictionary of configuration values.
+                    
                     # Open the general_configuration.pkl file and load
                     # it into the `configure` variable:
                     with open(opj(dir, 'multiverse', 'configuration', 'general_configuration.pkl'), 'rb') as f:
@@ -151,11 +163,9 @@ def parse(start):
     # Return `run_now` (boolean), `args` (list of provided arguments), 
     # `process_mode` (string), and `configure` (dictionary of options): 
     return run_now, args, process_mode, configure
-    # TODO: Return to line 176
 
-# TODO: line 157 - main method
 def main():
-    # Create and ArgumentParser object and assign to `start` to accept
+    # Create an ArgumentParser object and assign to `start` to accept
     # command line arguments:
     start = argparse.ArgumentParser()
     # Add the specific command line flags `-c`, `-r`, `-rr`, `-d`, and
@@ -168,22 +178,14 @@ def main():
 
     # Variables `run_now`, `args`, `process_mode`, and `config` are set 
     # using a call to the `parse` function. 
-    # TODO: Jump to line 28 - parse function
     run_now, args, process_mode, config = parse(start)
 
-    # TODO: Line 176
     # If running:
     if run_now:
         # Create the code directory path from the current file's 
         # directory, concatenated with 'multiverse':
         code_dir = os.path.join(dir, 'multiverse')
 
-        # OG Comment from GSeasons: IF TEMPLATE FLOW FAILS, UNCOMMENT LINES 82-84, AND COMMENT LINES 79-80
-        # Note: This comment does not make sense anymore in the current 
-        # context of the code. The original code file lines "82-84" refers
-        # to the OG comment lines themselves, and "79-80" would have 
-        # referred to what is now line 175 above, with `if run_now:`.
-        
 # =============================================================================
         # `volumes` is creating a list of directory paths for 
         #  bind-mounting in a container:
@@ -204,8 +206,6 @@ def main():
             try:
                 import docker
             except:
-                # Note: `call` is a deprecated function and should be 
-                # replaced by `run`.
                 # If importing Docker doesn't work because it is not 
                 # installed, run `pip install docker` and then re-attempt
                 # to import Docker:
@@ -395,7 +395,5 @@ def main():
                 # output path, and rerun flag:
                 subprocess.call(['sbatch', '--nodes={0}'.format(config['nodes']), '--ntasks={0}'.format([config['ntasks']]), '--account={0}'.format(config['account']), '--time={0}'.format(config['time']), '--mem={0}'.format(config['mem']), 'multiverse/configuration/multiverse.sh', args.data, args.out, str(args.rerun)])
             
-# TODO: line 399 - Start here
 if __name__ == "__main__":
-    # TODO: Jump to line 157 - main method
     main()
