@@ -1,6 +1,15 @@
 #!/bin/bash
 
 module load apptainer
+# To deal with the ipyparallel errors, adding in MK's recommended venv (lines 5 - 12)
+module load StdEnv/2023
+module load Python
+
+virtualenv --no-download venv
+source venv/bin/activate
+
+pip install --no-index --upgrade pip
+pip install --no-index ipyparallel
 
 container=~/multiverse.sif
 custom_base=/opt/miniconda-latest/envs/multiverse/lib/python3.8/site-packages/nipype/pipeline/plugins/base.py
