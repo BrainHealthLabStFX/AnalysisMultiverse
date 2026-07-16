@@ -24,9 +24,9 @@ if [ ! -f $container ]; then
     exit
 fi
 
-# Note: Again, this is exporting a location that we expect to exist when 
-#       it gets called on, this doesn't create the file itself.
-export REQUESTS_CA_BUNDLE=$PWD/cacert.pem
+# Due to a FileNotFoundError in the container, Claude Sonnet 5 recommends
+# hardcoding in the cacert.pem file location from the conda environment within the container
+export APPTAINERENV_REQUESTS_CA_BUNDLE=/opt/miniconda-latest/envs/multiverse/lib/python3.8/site-packages/certifi/cacert.pem
 
 # Bind mounts:
 #     * output_path:/scratch_dir
