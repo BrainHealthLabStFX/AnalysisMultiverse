@@ -1,3 +1,44 @@
-venv
+# Many of the following were taken from github/gitignore/ templates
+
+# Python 
+__pycache__/
+.cache
+.cache/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Python IDEs
+.spyderproject
+.spyderproject/
+.spyproject
+.spyproject/
+.idea/
+.idea
+.vscode/
+.vscode
+tempCodeRunnerFile.py
+.vscode/*
+
+# Environments
+.env
+.envrc
 .venv
-interpreting/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.Python
+
+# macOS
+.DS_Store
+
+# Cluster
+.gitconfig
+nearline/
+projects/
+scratch/
+slurm*.out
+*.log
