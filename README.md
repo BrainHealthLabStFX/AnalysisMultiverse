@@ -2,13 +2,12 @@
 
 Software for automated multiverse analysis for fMRI
 
-## TODO
-
-- FIX CHECKPOINTS/MAKE CONSISTENT. For clarity, this means that if a run fails, restarting with rerun set to True should use the last generated checkpoint_crash file. Double check that setting DEBUG to FALSE will allow program to be rerun from wherever it last left off (but this should be the default functionality). Check that rerun in debug mode doens't start from the beginning, I think default behaviour might cause software to regenerate the directed graph of pipelines, and go node by node, instead of skipping to where it left off. Double check what rerun behaviour accomplishes with small sample/few pipelines
-- Enable running the program in 2 steps -> Initially lower resources are needed to generate the directed graph (can only use 1 CPU), but once analysis actually starts need increased CPUs and memory. Default function should be to initially run program to generate graph, create a checkpoint file, and then automatically rerun with the typical increased resources (this may only apply if not running in batches).
-- MAKE SURE CODE SHOULD STOP IF WRONG VALUE ENTERED INTO ATLAS GUI OR BE REPLACED BY DEFAULT
-
 ## Run Instructions
+
+__Information Updated__: 2022-03-21
+
+> [!NOTE]
+> More recently updated run instructions have been included at the end of this README. The following instructions are being retained until all the steps provided here can be verified and translated into a formal standard operating procedure (SOP).
 
 - Launch Terminal
   1. For local run 'python /PATH/TO/MULTIVERSE.PY/multiverse.py -r -d /PATH/TO/BIDS_DATA -o /PATH/TO/OUTPUT_FOLDER'
@@ -26,9 +25,13 @@ Software for automated multiverse analysis for fMRI
 
 ## GUI Note
 
+__Information Updated__: 2022-06-10
+
 - When setting a parameter with a range (i.e. low, high, step) the default behaviour is [low, high), unless a step is included in which case it will be [low, high] incremented by the step value
   
 ## Node Naming Conventions/Multiverse Modification
+
+__Information Updated__: 2022-03-21
 
 - To add more parameters to multiverse analysis, edit the default.json file in configuration
   1. Find the specific node in the workflow, cross reference with changeable options for nipype interface
@@ -55,6 +58,8 @@ Software for automated multiverse analysis for fMRI
 
 ## Adding Additional FEAT Options
 
+__Information Updated__: 2022-04-25
+
 - To add more options to the first level FEAT analysis, the template file: nipype/interfaces/fsl/model_templates/feat_ev_none.tcl can be edited
    1. This will also require editing versatile.py lines 784 to 808 so that values can be added to the template file
        - a. In addition, SpecifyModelVersatile will need to be altered so that the produced dictionary will include the altered parameters added to the template file
@@ -62,6 +67,8 @@ Software for automated multiverse analysis for fMRI
        - c. Finally, changes to the default.json file will need to be made to add new parameters
 
 ## Resource Allocation
+
+__Information Updated__: 2025-04-08
 
 - On compute canada ~1.2 days for 50 subjects x 8 pipelines with 32 CPUs, 6gb RAM per CPU
 - Potential issue: There is a file cap on compute canada of 1000k (Graham), which may result in workflow crashing (likely need to get this extended)
@@ -73,7 +80,7 @@ Software for automated multiverse analysis for fMRI
 
 # Steps to Run a Test Job on the Nibi HPC Cluster
 
-Process Updated: 2026-07-16
+__Information Updated__: 2026-07-16
 
 ## Setting Up the AnalysisMultiverse Code for the First Time with Git
 
