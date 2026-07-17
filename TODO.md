@@ -18,9 +18,12 @@ New tasks should be added to the bottom of the applicable section. Once the task
 - No hot fixes required
 
 ### Bug Fixes
+- [ ] Fix checkpoints / make consistent ~7d #bugfix @k8redfern 2022-07-13 [TBD, ~0d\]
+- [ ] Make sure code should stop running if Atlas GUI values are entered incorrectly ~7d #bugfix @k8redfern 2024-09-12 [TBD, ~0d\]
 - [ ] Investigate potential bug being created by running a single pipeline ~1d #bugfix @k8redfern 2026-07-07 [TBD, ~0d\]
 
 ### Features
+- [ ] Enable running the program in two steps ~7d #feature @k8redfern 2025-04-08 [TBD, ~0d\]
 - [ ] Automate parameter selection ranges from dataset ~15d #feature @k8redfern 2026-05-04 [TBD, ~0d\]
      
 ### Chores
