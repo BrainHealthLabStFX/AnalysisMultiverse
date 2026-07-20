@@ -1,11 +1,23 @@
-# This script creates a new general_configuration.pkl file for test runs
+# This script creates a new general_configuration.pkl file for test runs.
 
 # Make sure to open the current general_configuration.pkl file first to
 # establish what all the current values are, and what needs to change!
 
 # This code is currently set-up to create a general_configuration_new.pkl
 # file so that you have one last chance to check the old pickle file before 
-# deleting it and renaming the new one
+# deleting it and renaming the new one.
+
+# Create the new pickle file using:
+# `nano -l new-gen-config-pkl.py`
+# -> Make your required edits
+# -> Use `ctrl-o` to save your changes
+# -> Use `ctrl-x` to exit the Nano editor
+# `python new-gen-config-pkl.py`
+# -> This creates the new "general_configuration_new.pkl" file
+# Rename the old pickle file:
+# `mv general_configuration.pkl general_configuration_old.pkl`
+# Rename the new pickle file so it can be found by the software:
+# `mv general_configuration_new.pkl general_configuration.pkl`
 
 import pickle
 
@@ -28,5 +40,7 @@ configuration = {
     'pipelines': 1
 }
 
+# Save the configuration dictionary as a pickle file with the 
+# config_file name
 with open(config_file, "wb") as pickle_file:
     pickle.dump(configuration, pickle_file)
