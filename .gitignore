@@ -4,6 +4,7 @@
 __pycache__/
 .cache
 .cache/
+.ipynb_checkpoints/
 
 # IPython
 profile_default/
