@@ -1,7 +1,7 @@
 ---
 name: Documentation Required
 about: Point out where we're still lacking proper documentation!
-title: 'Docs(insert scope here): missing documentation'
+title: 'docs(insert scope here): missing documentation'
 labels: documentation
 assignees: k8redfern
 type: Task

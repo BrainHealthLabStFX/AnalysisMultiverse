@@ -1,7 +1,7 @@
 ---
 name: Bug Report
 about: Create a report to help us fix our code!
-title: 'Bug(scope of problem): basic description'
+title: 'bug(scope of problem): basic description'
 labels: bug
 assignees: k8redfern
 type: Bug

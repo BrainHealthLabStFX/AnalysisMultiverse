@@ -1,7 +1,7 @@
 ---
 name: Documentation Clarification
 about: Help us make better documentation!
-title: 'Docs(insert scope here): update documentation with clarification'
+title: 'docs(insert scope here): update documentation with clarification'
 labels: documentation
 assignees: k8redfern
 type: Task

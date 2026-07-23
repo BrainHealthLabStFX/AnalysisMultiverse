@@ -1,7 +1,7 @@
 ---
 name: Feature Request
 about: Suggest an idea for this project!
-title: 'Feat(scope of feature): description of feature'
+title: 'feat(scope of feature): description of feature'
 labels: enhancement
 assignees: k8redfern
 type: Feature
