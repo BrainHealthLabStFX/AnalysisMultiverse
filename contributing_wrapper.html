@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contributing &mdash; Analysis Multiverse Software 0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+    <link rel="shortcut icon" href="_static/mag_brain.ico"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=837179f8"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Analysis Multiverse Software Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #D25299" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/BrainHealthLabLogo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About the Docs</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #D25299" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Analysis Multiverse Software</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Contributing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/contributing_wrapper.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="index.html" class="btn btn-neutral float-left" title="Analysis Multiverse Software Documentation" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="contributing">
+<h1>Contributing<a class="headerlink" href="#contributing" title="Link to this heading"></a></h1>
+<section id="about-the-contribution-guidelines">
+<h2>About the Contribution Guidelines<a class="headerlink" href="#about-the-contribution-guidelines" title="Link to this heading"></a></h2>
+<p>The Analysis Multiverse software (AMS) and its documentation should assume no computer science or programming background.</p>
+<p>The AMS is intended to process functional magnetic resonance imaging (fMRI) data. The anticipated userbase for the AMS will be researchers from the fields of psychology, neuropsychology, neuroscience, and biology. These researchers may include student researchers. With this in mind, code should be as self-explanatory as possible. The documentation should assume no previous experience
+with running or installing software from GitHub, it should assume no previous experience with high performance computing (HPC), and should not assume any fluency with Python or any other programming languages. In essence, the documentation should be as accessible as possible, to facilitate the use of AMS by all potential users.</p>
+<p>These guidelines, as well as the documentation itself, are living documents. This means that they are meant to be updated and amended as necessary, dictated by the needs of the AMS contributors as well as the needs of the AMS users.</p>
+</section>
+<section id="how-to-contribute-to-the-repository">
+<h2>How to Contribute to the Repository<a class="headerlink" href="#how-to-contribute-to-the-repository" title="Link to this heading"></a></h2>
+<blockquote>
+<div><p>[!IMPORTANT]
+This repository enforces branch-naming rules using <a class="reference external" href="https://conventionalbranch.org">Conventional Branch</a>, and commit message formatting using <a class="reference external" href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a>.</p>
+<p>Using naming conventions like these gives us consistent naming practices across users and across time, allowing anyone to refer to the conventions to easily interpret documented changes and the current status of the repository.</p>
+</div></blockquote>
+<p>Git is a version control system, while GitHub is an online repository that <em>uses</em> Git. If you are not familiar with what Git is, or with using it locally on your computer, check out the resources available from <a class="reference external" href="https://git-scm.com/learn">Git</a> or <a class="reference external" href="https://docs.github.com/en/get-started/git-basics">Github</a>. If you are new to GitHub, please check out some <a class="reference external" href="https://www.youtube.com/watch?v=r8jQ9hVA2qs">tutorials</a> or read the <a class="reference external" href="https://docs.github.com/en/get-started/start-your-journey/about-github-and-git">GitHub docs</a> before proceeding. Tips for specific tutorials will be provided at the beginning of each section.</p>
+<section id="issues1">
+<h3>Issues<a class="footnote-reference brackets" href="#id22" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#issues1" title="Link to this heading"></a></h3>
+<p>Issues are meant to draw attention to areas that need work or have potential for growth. Issues are a feature of GitHub.</p>
+<blockquote>
+<div><p>[!TIP]
+If you’re new to GitHub, learn all about <a class="reference external" href="https://docs.github.com/en/issues">issues</a>.</p>
+<p>Specifically, check out <a class="reference external" href="https://docs.github.com/en/issues/tracking-your-work-with-issues/learning-about-issues/about-issues">what an issue is</a> and <a class="reference external" href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue">how to create an issue</a>.</p>
+</div></blockquote>
+<p>This section lists the suggested use for issues with this repository, but please keep in mind that the codebase is still being developed and tested, and the documentation is a work in progress. The issue you highlight may already be over on our <a class="reference internal" href="#docs/TODO.md"><span class="xref myst">TODO</span></a> list, so please check that first.</p>
+<p>Use issues to…</p>
+<ul class="simple">
+<li><p>Document and report bugs in the code</p></li>
+<li><p>Identify functions, processes, or code files that lack adequate documentation within the code, or on our documentation website</p></li>
+<li><p>Suggest clarifications for a specific section of the documentation, or in general</p></li>
+<li><p>Suggest content that should be included in the documentation</p></li>
+<li><p>Suggest features to include in future versions</p></li>
+</ul>
+</section>
+<section id="pull-requests">
+<h3>Pull Requests<a class="headerlink" href="#pull-requests" title="Link to this heading"></a></h3>
+<p>Pull requests (PRs) are a way to include changes you’ve made into the main repository. PRs are a feature of GitHub.</p>
+<blockquote>
+<div><p>[!TIP]
+If you are unfamiliar with the process of committing your changes with Git, please read the <a class="reference internal" href="#commits"><span class="xref myst">Commits</span></a> section below <em><strong>first</strong></em>.</p>
+<p>If you’re new to Git and GitHub, learn all about <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks">forks</a>, <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches">branches</a>, and <a class="reference external" href="https://docs.github.com/en/pull-requests">pull requests</a>.</p>
+<p>Specifically, check out <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo">how to fork a repository</a>, <a class="reference external" href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">how to clone a repository</a>, <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository">how to create a branch</a>, <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">what a pull request is</a>, and <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork">how to create a pull request from a forked repository</a>.</p>
+</div></blockquote>
+<p>The process for submitting a PR to this repository is:</p>
+<ol class="arabic simple">
+<li><p>Fork the AnalysisMultiverse repository to your own GitHub account.</p></li>
+<li><p>Clone the forked repository to your local machine.</p></li>
+<li><p>Create a branch using <a class="reference external" href="https://conventionalbranch.org">Conventional Branch</a> formatting, adding your username after a dash to the end of the branch name. For example, if user “emazerol” was developing a documentation update, she would name her branch “chore/update-docs-emazerol”. If user “k8redfern” was developing a fix for a bug in the code, she would name her branch “fix/bug-in-the-code-k8redfern”.</p></li>
+<li><p>Make the changes to the files and / or code.</p></li>
+<li><p>Push the changes to the forked repository on your GitHub account.</p></li>
+<li><p>Go to the original AnalysisMultiverse repository, and click on the <strong>Compare &amp; pull request</strong> button.</p></li>
+</ol>
+<p>A template for your PR will be provided when you go to submit the PR. Simply replace the text under each provided header. If a specific header is not applicable, replace the template text with “N/A”.</p>
+<p>This information will be used to create the commit message for your PR if it is accepted, so please be thorough in your documentation. Improper documentation of your changes will result in a request for changes until the documentation is adequate.</p>
+</section>
+<section id="commits">
+<h3>Commits<a class="headerlink" href="#commits" title="Link to this heading"></a></h3>
+<p>A commit is essentially a “snapshot” of the Git repository that can show the changes have been made since the last commit. Commits are saved to your Git repository with a message that you write to describe the changes made. Commits are a feature of Git.</p>
+<blockquote>
+<div><p>[!TIP]
+If you’re new to Git, learn all about <a class="reference external" href="https://github.com/git-guides/git-commit">commits</a>.</p>
+</div></blockquote>
+<p>Why do good commit messages matter?</p>
+<p>Commit messages make up a permanent log of changes to a Git repository. Depending on the repository, the timeframe, and the number of contributors, the commit history can vary widely. As said by <a class="reference external" href="https://chris.beams.io/git-commit">Chris Beams</a>:</p>
+<blockquote>
+<div><p>[…] a well-crafted Git commit message is the best way to communicate context about a change to fellow developers (and indeed to their future selves). A diff<a class="footnote-reference brackets" href="#id23" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> will tell you <em><strong>what</strong></em> changed, but only the commit message can properly tell you <em><strong>why</strong></em>.</p>
+</div></blockquote>
+<p>Beams expands further on what will be our main point here:</p>
+<blockquote>
+<div><p>A project’s long-term success rests (among other things) on its maintainability, and a maintainer has few tools more powerful than [their] project’s log. It’s worth taking the time to learn how to care for one properly. What may be a hassle at first soon becomes habit, and eventually a source of pride and productivity for all involved.</p>
+</div></blockquote>
+<p>Commit messages are a form of data and as such, part of the data management plan for AMS includes the format of commit messages as a part of our <em>commit</em>ment (pun intended) to the <a class="reference external" href="https://www.go-fair.org/fair-principles/">FAIR principles</a> of Accessibility and Interoperability. In this spirit, we will use the advice from Beams’ article “<a class="reference external" href="https://chris.beams.io/git-commit">How to Write a Git Commit Message</a>” with the formatting structure defined by <a class="reference external" href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits 1.0.0</a>.</p>
+<p>The required format will be as follows, with further details below:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Format</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SUBJECT</p></td>
+<td><p>&lt;type&gt;[optional scope]: &lt;description&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>EMPTY LINE</p></td>
+<td><p>empty</p></td>
+</tr>
+<tr class="row-even"><td><p>CO-AUTHORS</p></td>
+<td><p>[optional]</p></td>
+</tr>
+<tr class="row-odd"><td><p>EMPTY LINE</p></td>
+<td><p>empty</p></td>
+</tr>
+<tr class="row-even"><td><p>BODY</p></td>
+<td><p>[optional]</p></td>
+</tr>
+<tr class="row-odd"><td><p>EMPTY LINE</p></td>
+<td><p>empty</p></td>
+</tr>
+<tr class="row-even"><td><p>FOOTER</p></td>
+<td><p>[optional]</p></td>
+</tr>
+</tbody>
+</table>
+<section id="in-general">
+<h4>In General<a class="headerlink" href="#in-general" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>The underlying intent of the change takes priority.</p></li>
+</ol>
+<p>When a change bridges multiple concepts, the underlying intent takes priority<a class="footnote-reference brackets" href="#id41" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></a>. For example, if a formatting change is made to a unittest but does not affect the function of the unittest, the type should be <em>style</em>, not <em>test</em>. This helps to make the overall change clear right in the subject line.</p>
+<ol class="arabic simple" start="2">
+<li><p>Make atomic commits.</p></li>
+</ol>
+<p>Wallace Freitas wrote an article about <a class="reference external" href="https://dev.to/wallacefreitas/best-practices-to-make-a-good-commit-writing-clean-effective-commit-messages-5eg9">best practices for commits</a>, and we will be utilizing his recommendation to make atomic commits. <em>Atomic</em> refers to making only one change per commit. This makes changes easier to review, track, and if it comes down to it, revert.</p>
+<ol class="arabic simple" start="3">
+<li><p>Use the scope option whenever possible.</p></li>
+</ol>
+<p>The subject line scope is optional, but if it is included, it should consist of a noun describing a section of the codebase or documentation surrounded by parentheses, for example: <code class="docutils literal notranslate"><span class="pre">Docs(README):</span> <span class="pre">fix</span> <span class="pre">typo</span> <span class="pre">in</span> <span class="pre">line</span> <span class="pre">5</span></code><a class="footnote-reference brackets" href="#id42" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>22<span class="fn-bracket">]</span></a>. If it provides enough context in conjunction with the rest of the subject, using a scope may remove the need to complete the body of the commit message.</p>
+</section>
+<section id="subject-line">
+<h4>Subject Line<a class="headerlink" href="#subject-line" title="Link to this heading"></a></h4>
+<p>The subject should be limited to 50 characters and should include the type of change being made. This is to prevent important information from being automatically line-wrapped and hidden from initial view.</p>
+<p>The commit type can be one of the following, and should utilize the short form in parentheses to save space<a class="footnote-reference brackets" href="#id24" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>:</p>
+<ul class="simple">
+<li><p>Feature (<em>feat</em>): Introduces a new feature to the codebase<a class="footnote-reference brackets" href="#id25" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>Fix (<em>fix</em>): Patches a bug in the codebase<a class="footnote-reference brackets" href="#id26" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>Performance (<em>perf</em>): Adjustments made to optimize resource usage without altering the program’s primary function<a class="footnote-reference brackets" href="#id27" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>Style (<em>style</em>): Aesthetic or formatting alterations that do not influence execution<a class="footnote-reference brackets" href="#id28" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>Refactor (<em>ref</em>): Modifications that reorganize existing code to boost overall maintainability or human-readability, strictly excluding any changes that qualify merely as stylistic or performance-based<a class="footnote-reference brackets" href="#id29" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>Documentation (<em>docs</em>): Updates applied to textual resources, including comments within the code, README files, and typo corrections<a class="footnote-reference brackets" href="#id30" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>Test (<em>test</em>): The creation or revision or automated testing scripts<a class="footnote-reference brackets" href="#id31" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>Continuous Integration (<em>ci</em>): Adjustments to continuous integration and deployment pipelines or scripts (e.g., GitHub Actions setups)<a class="footnote-reference brackets" href="#id32" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>Build (<em>build</em>): Alterations to external dependencies, compilation configurations, and project build tools<a class="footnote-reference brackets" href="#id33" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>Chore (<em>chore</em>): Any remaining development tasks that do not align with the specific labels above<a class="footnote-reference brackets" href="#id34" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a>.</p></li>
+</ul>
+<p>In the subject description, use the imperative mood. According to <a class="reference external" href="https://chris.beams.io/git-commit">Beams</a>:</p>
+<blockquote>
+<div><p>[i]mperative mood just means “spoken or written as if giving a command or instruction”. A few examples:</p>
+<ul class="simple">
+<li><p>Clean your room</p></li>
+<li><p>Close the door</p></li>
+<li><p>Take out the trash</p></li>
+</ul>
+<p>[… ]The imperative can sound a little rude; that’s why we don’t often use it. But it’s perfect for Git commit subject lines. One reason for this is that […] when you write your commit messages in the imperative, you’re following Git’s own built-in conventions.</p>
+</div></blockquote>
+<p>Beams recommends a quick way to gauge whether your subject line description is written in the imperative mood:</p>
+<blockquote>
+<div><p><strong>A properly formed Git commit subject line should always be able to complete the following sentence</strong>:</p>
+<ul class="simple">
+<li><p>If applied, this commit will  <em>your subject line here</em></p></li>
+</ul>
+</div></blockquote>
+<p>If the completed sentence makes grammatical sense, you’re on the right track!</p>
+</section>
+<section id="co-authors">
+<h4>Co-Authors<a class="headerlink" href="#co-authors" title="Link to this heading"></a></h4>
+<p>If there are any co-authors on the commit, these should be added first after an inserted empty line<a class="footnote-reference brackets" href="#id35" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a>. Before you can add a co-author, you must know the appropriate email to use if you want them to get contribution credit on GitHub<a class="footnote-reference brackets" href="#id36" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a>.</p>
+<p>The structure to add co-author(s) to your commit message is as follows<a class="footnote-reference brackets" href="#id37" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Refactor usability tests.</span>
+<span class="s2">&gt;</span>
+<span class="s2">&gt; Co-authored-by: NAME &lt;NAME@EXAMPLE.COM&gt;</span>
+<span class="s2">&gt; Co-authored-by: ANOTHER-NAME &lt;ANOTHER-NAME@EXAMPLE.COM&gt;&quot;</span>
+</pre></div>
+</div>
+<p>Add another empty line<a class="footnote-reference brackets" href="#id38" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a> before continuing to the content of the body. If there are no co-authors, only one empty line<a class="footnote-reference brackets" href="#id39" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></a> is required between the subject line and the body. The empty lines will aid in readability.</p>
+</section>
+<section id="body">
+<h4>Body<a class="headerlink" href="#body" title="Link to this heading"></a></h4>
+<p>While not entirely necessary for smaller, self-explanatory changes, further explanation than the brief subject line may be required or beneficial in many cases. The information that can be found in the body can provide important context for implementations that may seem unnecessary or counterintuitive but were made for very specific reasons, such as streamlining a particular workflow, or to take advantage of specific architecture. If it is not immediately obvious from the subject line description, please include the following information:</p>
+<ul class="simple">
+<li><p><strong>Where</strong>: If necessary, give a detailed description of where the change is being made. Include file names and / or line numbers.</p></li>
+<li><p><strong>Current Status</strong>: If applicable, provide a description of how things worked before the change, and what problems arose from this. Include instructions on how to reproduce the error.</p></li>
+<li><p><strong>Change</strong>: If applicable, provide a description of how things work now, given the change.</p></li>
+<li><p><strong>Why</strong>: Describe why you decided to solve the problem, and your reasoning behind the methods you used.</p></li>
+<li><p><strong>Testing</strong>: If applicable, include a detailed description of how the changes were tested. Include manual testing.</p></li>
+<li><p><strong>Additional Notes</strong>: If necessary, include more context with additional notes, such as references.<a class="footnote-reference brackets" href="#id40" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></a></p></li>
+</ul>
+<p>Structurally, ensure the body text wraps at 72 characters. This follows the docstrings and comments line length restrictions followed by <a class="reference external" href="https://peps.python.org/pep-0008/#maximum-line-length">Python’s PEP 8</a>, and allows for users on a variety of screen resolutions to read your message without needing to scroll.</p>
+</section>
+<section id="footer">
+<h4>Footer<a class="headerlink" href="#footer" title="Link to this heading"></a></h4>
+<p>If applicable, link <a class="reference external" href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue">directly</a> to any existing related issues or PRs in the footer. Use the keywords provided by GitHub to refer to these issues or PRs. This allows reviewers to easily find the related issues and PRs to close or amend them, as necessary.</p>
+</section>
+</section>
+<section id="in-conclusion">
+<h3>In Conclusion<a class="headerlink" href="#in-conclusion" title="Link to this heading"></a></h3>
+<p>These contributing guidelines have been created to facilitate the long-term maintenance and development of the AMS by a team that spans different locations, timezones, and timeframes. Having consistent methods of contributing and documentation will also aid the future publishing process.</p>
+<section id="references">
+<h4>References:<a class="headerlink" href="#references" title="Link to this heading"></a></h4>
+</section>
+</section>
+</section>
+</section>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id22" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Inspiration for the <em><strong>Issues</strong></em> section drawn from Dr. James Hughes’ <a class="reference external" href="https://github.com/jameshughes89/cs101">cs101 repository</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id23" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://git-scm.com/docs/git-diff">Diff</a>: “Show changes between the working tree and the index or a tree, changes between the index and a tree, changes between two trees, changes resulting from a merge, changes between two blob objects, or changes between two files on disk.”</p>
+</aside>
+<aside class="footnote brackets" id="id24" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
+<p>Modified from the <a class="reference external" href="https://en.wikipedia.org/wiki/Conventional_Commits_Specification">Wikipedia entry on the Conventional Commits specification</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id25" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">4</a><span class="fn-bracket">]</span></span>
+<p>Modified from <a class="reference external" href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits 1.0.0</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id26" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">5</a><span class="fn-bracket">]</span></span>
+<p>Modified from <a class="reference external" href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits 1.0.0</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id27" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">6</a><span class="fn-bracket">]</span></span>
+<p>Modified from the <a class="reference external" href="https://en.wikipedia.org/wiki/Conventional_Commits_Specification">Wikipedia entry on the Conventional Commits specification</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id28" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">7</a><span class="fn-bracket">]</span></span>
+<p>Modified from the <a class="reference external" href="https://en.wikipedia.org/wiki/Conventional_Commits_Specification">Wikipedia entry on the Conventional Commits specification</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id29" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">8</a><span class="fn-bracket">]</span></span>
+<p>Modified from the <a class="reference external" href="https://en.wikipedia.org/wiki/Conventional_Commits_Specification">Wikipedia entry on the Conventional Commits specification</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id30" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">9</a><span class="fn-bracket">]</span></span>
+<p>Modified from the <a class="reference external" href="https://en.wikipedia.org/wiki/Conventional_Commits_Specification">Wikipedia entry on the Conventional Commits specification</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id31" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">10</a><span class="fn-bracket">]</span></span>
+<p>Modified from the <a class="reference external" href="https://en.wikipedia.org/wiki/Conventional_Commits_Specification">Wikipedia entry on the Conventional Commits specification</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id32" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">11</a><span class="fn-bracket">]</span></span>
+<p>Modified from the <a class="reference external" href="https://en.wikipedia.org/wiki/Conventional_Commits_Specification">Wikipedia entry on the Conventional Commits specification</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id33" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">12</a><span class="fn-bracket">]</span></span>
+<p>Modified from the <a class="reference external" href="https://en.wikipedia.org/wiki/Conventional_Commits_Specification">Wikipedia entry on the Conventional Commits specification</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id34" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">14</a><span class="fn-bracket">]</span></span>
+<p>Modified from the <a class="reference external" href="https://en.wikipedia.org/wiki/Conventional_Commits_Specification">Wikipedia entry on the Conventional Commits specification</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id35" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">15</a><span class="fn-bracket">]</span></span>
+<p>If using a text editor on command line to create your commit message, use two consecutive newlines.</p>
+</aside>
+<aside class="footnote brackets" id="id36" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">16</a><span class="fn-bracket">]</span></span>
+<p>Creating a commit with multiple authors (from <a class="reference external" href="https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors"><em>GitHub</em></a>).</p>
+</aside>
+<aside class="footnote brackets" id="id37" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">17</a><span class="fn-bracket">]</span></span>
+<p>Creating a commit with multiple authors (from <a class="reference external" href="https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors"><em>GitHub</em></a>).</p>
+</aside>
+<aside class="footnote brackets" id="id38" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">18</a><span class="fn-bracket">]</span></span>
+<p>If using a text editor on command line to create your commit message, use two consecutive newlines.</p>
+</aside>
+<aside class="footnote brackets" id="id39" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">19</a><span class="fn-bracket">]</span></span>
+<p>If using a text editor on command line to create your commit message, use two consecutive newlines.</p>
+</aside>
+<aside class="footnote brackets" id="id40" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">20</a><span class="fn-bracket">]</span></span>
+<p>Chris Beams, <a class="reference external" href="https://chris.beams.io/git-commit"><em>How to Write a Git Commit Message</em></a>.</p>
+</aside>
+<aside class="footnote brackets" id="id41" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">21</a><span class="fn-bracket">]</span></span>
+<p>Modified from the <a class="reference external" href="https://en.wikipedia.org/wiki/Conventional_Commits_Specification">Wikipedia entry on the Conventional Commits specification</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id42" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">22</a><span class="fn-bracket">]</span></span>
+<p>Modified from <a class="reference external" href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits 1.0.0</a>.</p>
+</aside>
+</aside>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Analysis Multiverse Software Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026 Brain Health Lab, St. Francis Xavier University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
