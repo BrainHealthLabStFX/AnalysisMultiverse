@@ -20,7 +20,7 @@ module load apptainer
 # StdEnv/2023 provides the standard environment configuration for the cluster
 module load StdEnv/2023
 # Python module provides the base Python environment
-module load Python
+module load python
 
 # Create and activate a virtual environment to isolate ipyparallel installation
 # --no-download flag ensures pip uses cached packages available on the cluster
